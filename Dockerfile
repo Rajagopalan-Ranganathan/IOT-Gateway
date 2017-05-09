@@ -7,7 +7,7 @@ ADD app/ /usr/src/app
 
 # OpenCV
 RUN apt-get update
-RUN apt-get install -y python python-dev python-pip python-pygame libraspberrypi-bin
+RUN apt-get install -y python python-dev python-pip python-pygame
 
 RUN apt-get install libopencv-dev python-opencv
 
