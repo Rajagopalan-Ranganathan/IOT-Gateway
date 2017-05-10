@@ -35,7 +35,9 @@ RUN wget 'https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py
   	&& rm -f setuptools-0.6c11-py2.7.egg
 RUN curl 'https://bootstrap.pypa.io/get-pip.py' | python2.7
 RUN pip install numpy
-COPY build_opencv.sh /build_opencv.sh
+
+
+ADD build_opencv.sh /build_opencv.sh
 
 RUN /bin/sh /build_opencv.sh \
 	&& rm -rf /build_opencv.sh
