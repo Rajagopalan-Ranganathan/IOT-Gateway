@@ -37,9 +37,9 @@ RUN curl 'https://bootstrap.pypa.io/get-pip.py' | python2.7
 RUN pip install numpy
 
 
-ADD scripts/ /usr/src/scripts
+COPY scripts/ /usr/src/scripts
 
-RUN /bin/sh  /usr/src/scripts/build_opencv.sh 
+RUN /bin/sh  /usr/src/scripts/build_opencv.sh
 
 RUN apt-get update \
 		&& apt-get install -y software-properties-common \
