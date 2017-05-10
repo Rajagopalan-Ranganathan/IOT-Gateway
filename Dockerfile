@@ -22,7 +22,6 @@ RUN apt-get update \
 		libjasper-dev \
 		zlib1g-dev \
 		libopenexr-dev \
-		libxine-dev \
 		libeigen3-dev \
 		libtbb-dev \
 		pkg-config \
@@ -30,6 +29,7 @@ RUN apt-get update \
 		xorg \
 		libgtk2.0-0 \
 		unzip
+
 RUN wget 'https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg' \
   	&& /bin/sh setuptools-0.6c11-py2.7.egg \
   	&& rm -f setuptools-0.6c11-py2.7.egg
