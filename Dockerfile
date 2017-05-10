@@ -43,7 +43,6 @@ RUN /bin/sh  /usr/src/scripts/build_opencv.sh
 
 RUN apt-get update \
 		&& apt-get install -y software-properties-common \
-		&& apt-get update \
 
 #Copy contents of app from our repo into /usr/src/app into our container.
 ADD app/ /usr/src/app
