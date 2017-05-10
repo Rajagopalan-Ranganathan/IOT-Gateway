@@ -43,7 +43,6 @@ RUN /bin/sh  /usr/src/scripts/build_opencv.sh
 
 RUN apt-get update \
 		&& apt-get install -y software-properties-common \
-		&& add-apt-repository ppa:mc3man/trusty-media \
 		&& apt-get update \
 		&& apt-get install -y ffmpeg libxine1
 
