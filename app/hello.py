@@ -1,17 +1,31 @@
-#!/usr/bin/python
-
-import mraa
-import time
 import cv2
+import sys
 
-x = mraa.Gpio(13)
-x.dir(mraa.DIR_OUT)
+# Get user supplied values
+imagePath = "some.jpg"
+cascPath = "haarcascade_frontalface_default.xml"
 
-# this print statement will appear in the resin.io dashboard logs.
-print("hello Mr. Edison!. Testing cv2.")
-print(cv2.__version__)
-while True:
-    x.write(1)
-    time.sleep(0.2)
-    x.write(0)
-    time.sleep(0.2)
+# Create the haar cascade
+faceCascade = cv2.CascadeClassifier(cascPath)
+
+# Read the image
+image = cv2.imread(imagePath)
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# Detect faces in the image
+faces = faceCascade.detectMultiScale(
+    gray,
+    scaleFactor=1.1,
+    minNeighbors=5,
+    minSize=(30, 30),
+    flags = cv2.cv.CV_HAAR_SCALE_IMAGE
+)
+
+print("Found {0} faces!".format(len(faces)))
+
+# Draw a rectangle around the faces
+for (x, y, w, h) in faces:
+    cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
+
+cv2.imshow("Faces found", image)
+cv2.waitKey(0)
