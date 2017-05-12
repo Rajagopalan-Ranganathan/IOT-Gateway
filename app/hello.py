@@ -2,7 +2,7 @@ import cv2
 import sys
 
 # Get user supplied values
-imagePath = "abba.png"
+imagePath = "/usr/src/app/abba.png"
 cascPath = "haarcascade_frontalface_default.xml"
 
 # Create the haar cascade
@@ -22,7 +22,6 @@ faces = faceCascade.detectMultiScale(
 )
 
 print("Found {0} faces!".format(len(faces)))
-
 
 cv2.imshow("Faces found", image)
 cv2.waitKey(0)
