@@ -23,4 +23,4 @@ faces = faceCascade.detectMultiScale(
 print("Found {0} faces!".format(len(faces)))
 
 #cv2.imshow("Faces found", image)
-cv2.waitKey(0)
+#cv2.waitKey(0)
