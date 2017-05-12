@@ -2,7 +2,6 @@ FROM resin/intel-edison-python:latest
 # Enable systemd
 ENV INITSYSTEM on
 
-
 RUN apt-get update \
 	&& apt-get install -y -q \
 		wget \
@@ -29,17 +28,6 @@ RUN apt-get update \
 		xorg \
 		libgtk2.0-0 \
 		unzip
-
-RUN wget 'https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg' \
-  	&& /bin/sh setuptools-0.6c11-py2.7.egg \
-  	&& rm -f setuptools-0.6c11-py2.7.egg
-RUN curl 'https://bootstrap.pypa.io/get-pip.py' | python2.7
-RUN pip install numpy
-
-
-
-RUN apt-get update \
-		&& apt-get install -y software-properties-common
 
 
 RUN pip install opencv-python
