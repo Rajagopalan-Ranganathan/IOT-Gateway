@@ -3,14 +3,14 @@ import sys
 
 # Get user supplied values
 imagePath = "/usr/src/app/abba.png"
-cascPath = "haarcascade_frontalface_default.xml"
+cascPath = "/usr/src/app/haarcascade_frontalface_default.xml"
 
 # Create the haar cascade
 faceCascade = cv2.CascadeClassifier(cascPath)
 
 # Read the image
-image = cv2.imread(imagePath)
-gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+image = cv2.imread(imagePath,0)
+#gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # Detect faces in the image
 faces = faceCascade.detectMultiScale(
@@ -23,5 +23,5 @@ faces = faceCascade.detectMultiScale(
 
 print("Found {0} faces!".format(len(faces)))
 
-cv2.imshow("Faces found", image)
+#cv2.imshow("Faces found", image)
 cv2.waitKey(0)
