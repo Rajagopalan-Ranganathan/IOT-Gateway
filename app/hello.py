@@ -21,6 +21,8 @@ faces = faceCascade.detectMultiScale(
 )
 
 print("Found {0} faces!".format(len(faces)))
+camIP = raw_input("Insert your android camera's IP: ")
 
+print(camIP)
 #cv2.imshow("Faces found", image)
 #cv2.waitKey(0)
