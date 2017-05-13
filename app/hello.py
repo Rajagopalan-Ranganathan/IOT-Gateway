@@ -3,7 +3,7 @@ import sys
 import urllib
 # Get user supplied values
 def main():
-    imagePath = "shot.jpg"
+    imagePath = "/usr/src/app/photo.jpg"
     cascPath = "/usr/src/app/haarcascade_frontalface_default.xml"
     camIP = "192.168.1.104"
     # Create the haar cascade
@@ -11,8 +11,8 @@ def main():
 
     # Read the image
     getFrame(camIP)
-    img = cv2.imread('photo.jpg',0)
-    faces = face_cascade.detectMultiScale(img, 1.3, 5)
+    img = cv2.imread(imagePath,0)
+    faces = faceCascade.detectMultiScale(img, 1.3, 5)
     print("Found {0} faces!".format(len(faces)))
     time.sleep(1)
 
@@ -34,6 +34,6 @@ def main():
 def getFrame(Camera_IP):
         imageFile = urllib.URLopener()
         print("http://"+ Camera_IP + ":8080/photo.jpg")
-        imageFile.retrieve("http://"+ Camera_IP + ":8080/photo.jpg", 'photo.jpg')
+        imageFile.retrieve("http://"+ Camera_IP + ":8080/photo.jpg", '/usr/src/app/photo.jpg')
 
 main()
