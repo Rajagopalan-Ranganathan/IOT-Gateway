@@ -11,7 +11,7 @@ def main():
 
     # Read the image
     getFrame(camIP)
-    img = cv2.imread('shot.jpg',0)
+    img = cv2.imread('photo.jpg',0)
     faces = face_cascade.detectMultiScale(img, 1.3, 5)
     print("Found {0} faces!".format(len(faces)))
     time.sleep(1)
@@ -33,6 +33,7 @@ def main():
 #cv2.waitKey(0)
 def getFrame(Camera_IP):
         imageFile = urllib.URLopener()
-        imageFile.retrieve("http://"+ Camera_IP + ":8080/photo.png", 'shot.jpg')
+        print("http://"+ Camera_IP + ":8080/photo.jpg")
+        imageFile.retrieve("http://"+ Camera_IP + ":8080/photo.jpg", 'photo.jpg')
 
 main()
