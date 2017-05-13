@@ -9,12 +9,11 @@ camIP = "192.168.1.104:8080"
 faceCascade = cv2.CascadeClassifier(cascPath)
 
 # Read the image
-    while(True):
-            getFrame(camIP)
-            img = cv2.imread('shot.jpg',0)
-            faces = face_cascade.detectMultiScale(img, 1.3, 5)
-            print("Found {0} faces!".format(len(faces)))
-            time.sleep(1)
+getFrame(camIP)
+img = cv2.imread('shot.jpg',0)
+faces = face_cascade.detectMultiScale(img, 1.3, 5)
+print("Found {0} faces!".format(len(faces)))
+time.sleep(1)
 
 # image = cv2.imread(imagePath,0)
 #gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
