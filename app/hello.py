@@ -37,7 +37,7 @@ def main():
 #cv2.waitKey(0)
 def getFrame(Camera_IP):
         imageFile = urllib.URLopener()
-        print("http://"+ Camera_IP + ":8080/photo.jpg")
+        # print("http://"+ Camera_IP + ":8080/photo.jpg")
         imageFile.retrieve("http://"+ Camera_IP + ":8080/photo.jpg", '/usr/src/app/photo.jpg')
 
 main()
