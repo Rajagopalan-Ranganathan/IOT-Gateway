@@ -12,7 +12,7 @@ def main():
     faceCascade = cv2.CascadeClassifier(cascPath)
     i = 0
     # Read the image
-    while(i < 1):
+    while(i < 30):
         i = i+1
         getFrame(camIP)
         img = cv2.imread(imagePath,0)
