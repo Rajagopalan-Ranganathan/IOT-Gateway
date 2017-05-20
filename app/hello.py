@@ -17,7 +17,7 @@ def main():
         getFrame(camIP)
         img = cv2.imread(imagePath,0)
         faces = faceCascade.detectMultiScale(img, 1.3, 5)
-        print("Found {0} faces!".format(len(faces)))
+        print("Found {0} faces! ".format(len(faces)))
         time.sleep(1)
     firebase = firebase.FirebaseApplication('https://facedetection-f5595.firebaseio.com/', None)
     result = firebase.get('/test', None)
