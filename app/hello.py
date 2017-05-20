@@ -2,7 +2,7 @@ import cv2
 import sys
 import urllib
 import time
-
+from firebase import firebase
 # Get user supplied values
 def main():
     imagePath = "/usr/src/app/photo.jpg"
