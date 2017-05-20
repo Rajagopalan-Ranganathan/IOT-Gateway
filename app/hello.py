@@ -12,14 +12,14 @@ def main():
     faceCascade = cv2.CascadeClassifier(cascPath)
     i = 0
     # Read the image
-    while(i < 30):
+    while(i < 1):
         i = i+1
         getFrame(camIP)
         img = cv2.imread(imagePath,0)
         faces = faceCascade.detectMultiScale(img, 1.3, 5)
         print("Found {0} faces!".format(len(faces)))
         time.sleep(1)
-    firebase.FirebaseApplication('https://facedetection-f5595.firebaseio.com/', None)
+    firebase = firebase.FirebaseApplication('https://facedetection-f5595.firebaseio.com/', None)
     result = firebase.get('/test', None)
     print result
 
