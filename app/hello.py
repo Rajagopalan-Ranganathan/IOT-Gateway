@@ -7,7 +7,7 @@ import time
 def main():
     imagePath = "/usr/src/app/photo.jpg"
     cascPath = "/usr/src/app/haarcascade_frontalface_default.xml"
-    camIP = "192.168.1.104"
+    camIP = "192.168.1.100"
     # Create the haar cascade
     faceCascade = cv2.CascadeClassifier(cascPath)
     i = 0
