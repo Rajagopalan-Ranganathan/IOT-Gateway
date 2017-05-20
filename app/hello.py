@@ -19,6 +19,9 @@ def main():
         faces = faceCascade.detectMultiScale(img, 1.3, 5)
         print("Found {0} faces!".format(len(faces)))
         time.sleep(1)
+    firebase.FirebaseApplication('https://facedetection-f5595.firebaseio.com/', None)
+    result = firebase.get('/test', None)
+    print result
 
 # image = cv2.imread(imagePath,0)
 #gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
