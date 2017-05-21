@@ -23,7 +23,7 @@ def main():
     firebase = FirebaseApplication('https://facedetection-f5595.firebaseio.com', authentication)
     user = authentication.get_user()
     print user.firebase_auth_token
-    result = firebase.get('/cameras', None, {'print': 'pretty'})
+    result = firebase.get('/cameras', None, params= {'print': 'pretty'})
     print result
 
 def getFrame(Camera_IP):
