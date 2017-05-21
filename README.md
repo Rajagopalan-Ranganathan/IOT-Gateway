@@ -10,3 +10,9 @@ For an explination on how [resin.io](https://resin.io/) uses Dockerfiles check o
 
 [mraa-link]:https://github.com/intel-iot-devkit/mraa
 [systemd-link]:https://wiki.archlinux.org/index.php/Systemd
+
+
+
+### TODO
+* Do not send faces if the number has not changed
+* try...catch

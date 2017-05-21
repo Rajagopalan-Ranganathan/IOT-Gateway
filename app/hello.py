@@ -12,7 +12,7 @@ def main():
     faceCascade = cv2.CascadeClassifier(cascPath)
     i = 0
     # Read the image
-    while(i < 30):
+    while(i < 0):
         i = i+1
         getFrame(camIP)
         img = cv2.imread(imagePath,0)
@@ -20,6 +20,9 @@ def main():
         print("Found {0} faces! ".format(len(faces)))
         time.sleep(1)
     application = firebase.FirebaseApplication('https://facedetection-f5595.firebaseio.com/', None)
+    authentication = firebase.Authentication('sunil.2013', 'sunilkumarmohanty@gmail.com')
+    application.authentication = authentication
+
     result = application.get('/cameras', None)
     print result
 
