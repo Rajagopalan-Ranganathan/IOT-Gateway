@@ -19,8 +19,8 @@ def main():
         faces = faceCascade.detectMultiScale(img, 1.3, 5)
         print("Found {0} faces! ".format(len(faces)))
         time.sleep(1)
-    authentication = application.Authentication('sunil.2013', 'sunilkumarmohanty@gmail.com', True, True)
-    firebase = firebase.FirebaseApplication('https://facedetection-f5595.firebaseio.com/', authentication)
+    authentication = FirebaseAuthentication('sunil.2013', 'sunilkumarmohanty@gmail.com', True, True)
+    firebase = FirebaseApplication('https://facedetection-f5595.firebaseio.com/', authentication)
 
     result = firebase.get('/cameras', None)
     print result
