@@ -20,24 +20,9 @@ def main():
         print("Found {0} faces! ".format(len(faces)))
         time.sleep(1)
     application = firebase.FirebaseApplication('https://facedetection-f5595.firebaseio.com/', None)
-    result = application.get('/test', None)
+    result = application.get('/cameras', None)
     print result
 
-# image = cv2.imread(imagePath,0)
-#gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-# Detect faces in the image
-# faces = faceCascade.detectMultiScale(
-#     image,
-#     scaleFactor=1.1,
-#     minNeighbors=5,
-#     minSize=(30, 30),
-# )
-
-
-# print(camIP)
-#cv2.imshow("Faces found", image)
-#cv2.waitKey(0)
 def getFrame(Camera_IP):
         imageFile = urllib.URLopener()
         #print("http://"+ Camera_IP + ":8080/photo.jpg")
