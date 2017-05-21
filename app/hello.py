@@ -2,7 +2,7 @@ import cv2
 import sys
 import urllib
 import time
-from firebase import firebase
+from firebase.firebase import FirebaseApplication, FirebaseAuthentication
 # Get user supplied values
 def main():
     imagePath = "/usr/src/app/photo.jpg"
@@ -19,11 +19,10 @@ def main():
         faces = faceCascade.detectMultiScale(img, 1.3, 5)
         print("Found {0} faces! ".format(len(faces)))
         time.sleep(1)
-    application = firebase.FirebaseApplication('https://facedetection-f5595.firebaseio.com/', None)
-    authentication = application.Authentication('sunil.2013', 'sunilkumarmohanty@gmail.com')
-    application.authentication = authentication
+    authentication = application.Authentication('sunil.2013', 'sunilkumarmohanty@gmail.com', True, True)
+    firebase = firebase.FirebaseApplication('https://facedetection-f5595.firebaseio.com/', authentication)
 
-    result = application.get('/cameras', None)
+    result = firebase.get('/cameras', None)
     print result
 
 def getFrame(Camera_IP):
