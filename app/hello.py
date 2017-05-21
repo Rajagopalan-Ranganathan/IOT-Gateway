@@ -20,7 +20,7 @@ def main():
         print("Found {0} faces! ".format(len(faces)))
         time.sleep(1)
     application = firebase.FirebaseApplication('https://facedetection-f5595.firebaseio.com/', None)
-    authentication = firebase.Authentication('sunil.2013', 'sunilkumarmohanty@gmail.com')
+    authentication = application.Authentication('sunil.2013', 'sunilkumarmohanty@gmail.com')
     application.authentication = authentication
 
     result = application.get('/cameras', None)
