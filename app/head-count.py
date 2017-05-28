@@ -77,14 +77,14 @@ def worker():
                 continue
             img = cv2.imread(imageFullPath, 0)
             faces = faceCascade.detectMultiScale(img, 1.3, 5)
-            logging.debug("Found {0} faces! ".format(len(faces)))
+            logging.warning("Found {0} faces! ".format(len(faces)))
             if cameraFaces.has_key(camera.ipaddress):
                 if cameraFaces[camera.ipaddress] == len(faces):
                     logging.debug("No change in values, so dont post to cloud")
                     continue
             cameraFaces[camera.ipaddress] = len(faces)
             data = {'faces': len(faces),
-                'created_at': datetime.datetime.now()}
+                'created_at': (datetime.datetime.utcnow()- datetime.datetime(1970,1,1)).total_seconds()}
             firebase.post('/faces/'+camera.id+"/",data)
         
         #Thread sleeps for 1 second
