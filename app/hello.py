@@ -14,6 +14,7 @@ import threading
 cameraList = []
 firebase = FirebaseApplication('https://facedetection-f5595.firebaseio.com', None)
 
+##################################
 def datafetcher():
     #i=10
     while(1):
