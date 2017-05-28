@@ -18,7 +18,12 @@ import logging
 cameraList = []
 
 #firebase object defined
-firebase = FirebaseApplication('https://facedetection-f5595.firebaseio.com', None)
+SECRET = 'GtxD03WernNP8k0RF4SAbqaXzJNxzLQx77vCmEO6'
+DSN = 'https://facedetection-f5595.firebaseio.com'
+EMAIL = 'sunilkumarmohanty@gmail.com'
+authentication = FirebaseAuthentication(SECRET,EMAIL, True, True)
+firebase = FirebaseApplication(DSN, authentication)
+#firebase = FirebaseApplication('https://facedetection-f5595.firebaseio.com', None)
 
 
 ##################################
