@@ -8,4 +8,4 @@ RUN pip install opencv-python python-firebase
 ADD app/ /usr/src/app
 
 #run hello.py when the container starts on the device.
-CMD ["python", "usr/src/app/hello.py"]
+CMD ["python", "usr/src/app/head-count.py"]
